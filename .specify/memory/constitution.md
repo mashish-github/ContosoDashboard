@@ -1,50 +1,58 @@
-# [PROJECT_NAME] Constitution
+<!--
+Sync Impact Report:
+- Version change: initial → 1.0.0
+- Modified principles: All principles defined (Security-First Development, Test-Driven Development, Clean Architecture, User Experience Focus, Maintainability and Documentation)
+- Added sections: Technology Stack and Constraints, Development Workflow
+- Removed sections: None
+- Templates requiring updates: None
+- Follow-up TODOs: None
+-->
+
+# ContosoDashboard Constitution
+
 <!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### Security-First Development
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+All features must incorporate security considerations from design through implementation. The application demonstrates production-ready security patterns including authentication, authorization, and data protection, even in a training context with mock authentication.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### Test-Driven Development
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+Tests must be written before implementing features. Unit tests for services and components, integration tests for end-to-end functionality. Follow red-green-refactor cycle.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### Clean Architecture (NON-NEGOTIABLE)
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+Maintain separation of concerns with distinct layers: Models for data, Services for business logic, Pages for UI. Use dependency injection and avoid tight coupling.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### User Experience Focus
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+Prioritize intuitive and accessible user interfaces. Ensure proper navigation, feedback, and responsive design. Follow web accessibility guidelines.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### Maintainability and Documentation
+
+Code must be readable, well-documented, and follow C# and Blazor best practices. Include XML comments for public APIs and maintain clear project structure.
+
+## Technology Stack and Constraints
+
+**Framework**: Blazor Server with .NET 8.0  
+**Database**: Entity Framework Core with SQL Server (local development)  
+**UI**: Bootstrap for responsive design  
+**Authentication**: Mock system for training (demonstrates cookie-based auth, claims, RBAC)  
+**Deployment**: Local development only, no cloud dependencies
+
+## Development Workflow
+
+**Methodology**: Spec-Driven Development using GitHub Spec Kit (speckit)  
+**Process**: Write feature specs, create implementation plans, generate tasks, implement incrementally by user story  
+**Code Reviews**: Required for all changes, verify compliance with constitution principles  
+**Testing**: Automated tests for all features, manual testing for UI interactions
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution guides all development activities for the ContosoDashboard training project. All features must comply with the core principles. Amendments require documentation and consensus among contributors. Use speckit workflow for feature development.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
+**Version**: 1.0.0 | **Ratified**: 2026-03-29 | **Last Amended**: 2026-03-29
+
 <!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
